@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 27 nov. 2020 à 12:41
+-- Généré le : ven. 27 nov. 2020 à 14:13
 -- Version du serveur :  10.4.16-MariaDB
 -- Version de PHP : 7.4.12
 
@@ -24,6 +24,80 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `equipement`
+--
+
+CREATE TABLE `equipement` (
+  `id_equipement` int(3) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `pV` int(11) DEFAULT NULL,
+  `pM` int(11) DEFAULT NULL,
+  `pA` int(11) DEFAULT NULL,
+  `esquive` int(11) DEFAULT NULL,
+  `defMagique` int(11) DEFAULT NULL,
+  `defPhysique` int(11) DEFAULT NULL,
+  `vitesse` int(11) DEFAULT NULL,
+  `type` enum('arme','armure','potion','chapeau','pantalon') DEFAULT NULL,
+  `rarete` int(11) DEFAULT NULL,
+  `prix` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `equipement`
+--
+
+INSERT INTO `equipement` (`id_equipement`, `nom`, `pV`, `pM`, `pA`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `type`, `rarete`, `prix`) VALUES
+(1, 'Potion_test', 10, 10, 10, 10, 10, 10, 10, 'potion', 1, 10);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `monstre`
+--
+
+CREATE TABLE `monstre` (
+  `id_monstre` int(3) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `pV` int(11) DEFAULT NULL,
+  `pM` int(11) DEFAULT NULL,
+  `pA` int(11) DEFAULT NULL,
+  `esquive` int(11) DEFAULT NULL,
+  `defMagique` int(11) DEFAULT NULL,
+  `defPhysique` int(11) DEFAULT NULL,
+  `vitesse` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `personnage`
+--
+
+CREATE TABLE `personnage` (
+  `id_personnage` int(3) NOT NULL,
+  `nom` varchar(30) DEFAULT NULL,
+  `pV` int(11) DEFAULT NULL,
+  `pM` int(11) DEFAULT NULL,
+  `pA` int(11) DEFAULT NULL,
+  `pO` int(11) DEFAULT NULL,
+  `class` enum('crs','clown tueur','militant antifa') DEFAULT NULL,
+  `esquive` int(11) DEFAULT NULL,
+  `defMagique` int(11) DEFAULT NULL,
+  `defPhysique` int(11) DEFAULT NULL,
+  `vitesse` int(11) DEFAULT NULL,
+  `image` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `personnage`
+--
+
+INSERT INTO `personnage` (`id_personnage`, `nom`, `pV`, `pM`, `pA`, `pO`, `class`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `image`) VALUES
+(1, 'Monperso', 10, 10, 10, 10, 'crs', 10, 10, 10, 10, NULL);
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `possede`
 --
 
@@ -37,11 +111,51 @@ CREATE TABLE `possede` (
 --
 
 --
+-- Index pour la table `equipement`
+--
+ALTER TABLE `equipement`
+  ADD PRIMARY KEY (`id_equipement`);
+
+--
+-- Index pour la table `monstre`
+--
+ALTER TABLE `monstre`
+  ADD PRIMARY KEY (`id_monstre`);
+
+--
+-- Index pour la table `personnage`
+--
+ALTER TABLE `personnage`
+  ADD PRIMARY KEY (`id_personnage`);
+
+--
 -- Index pour la table `possede`
 --
 ALTER TABLE `possede`
   ADD KEY `id_equipement` (`id_equipement`),
   ADD KEY `id_personnage` (`id_personnage`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `equipement`
+--
+ALTER TABLE `equipement`
+  MODIFY `id_equipement` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT pour la table `monstre`
+--
+ALTER TABLE `monstre`
+  MODIFY `id_monstre` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT pour la table `personnage`
+--
+ALTER TABLE `personnage`
+  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
