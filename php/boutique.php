@@ -16,7 +16,9 @@ function tirageEquipement($tabEquip){
             $tabTirage->append($element);
         }
     }
-    var_dump($tabTirage);
+    
+    // var_dump($tabTirage);
+
 }
 
 tirageEquipement($tableauEquipement);
