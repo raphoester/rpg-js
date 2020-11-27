@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 27 nov. 2020 à 10:13
--- Version du serveur :  10.4.16-MariaDB
--- Version de PHP : 7.4.12
+-- Généré le : ven. 27 nov. 2020 à 11:13
+-- Version du serveur :  10.4.11-MariaDB
+-- Version de PHP : 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -42,6 +42,13 @@ CREATE TABLE `equipement` (
   `rarete` int(11) DEFAULT NULL,
   `prix` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `equipement`
+--
+
+INSERT INTO `equipement` (`id_equipement`, `nom`, `pV`, `pM`, `pA`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `type`, `id_personnage`, `rarete`, `prix`) VALUES
+(1, 'Potion_test', 10, 10, 10, 10, 10, 10, 10, 'potion', 1, 1, 10);
 
 -- --------------------------------------------------------
 
@@ -83,6 +90,13 @@ CREATE TABLE `personnage` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
+-- Déchargement des données de la table `personnage`
+--
+
+INSERT INTO `personnage` (`id_personnage`, `nom`, `pV`, `pM`, `pA`, `pO`, `class`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `image`) VALUES
+(1, 'Monperso', 10, 10, 10, 10, 'crs', 10, 10, 10, 10, NULL);
+
+--
 -- Index pour les tables déchargées
 --
 
@@ -113,7 +127,7 @@ ALTER TABLE `personnage`
 -- AUTO_INCREMENT pour la table `equipement`
 --
 ALTER TABLE `equipement`
-  MODIFY `id_equipement` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_equipement` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `monstre`
@@ -125,7 +139,7 @@ ALTER TABLE `monstre`
 -- AUTO_INCREMENT pour la table `personnage`
 --
 ALTER TABLE `personnage`
-  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Contraintes pour les tables déchargées
