@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 27 nov. 2020 à 10:04
+-- Généré le : ven. 27 nov. 2020 à 10:13
 -- Version du serveur :  10.4.16-MariaDB
 -- Version de PHP : 7.4.12
 
@@ -38,7 +38,9 @@ CREATE TABLE `equipement` (
   `defPhysique` int(11) DEFAULT NULL,
   `vitesse` int(11) DEFAULT NULL,
   `type` enum('arme','armure','potion','chapeau','pantalon') DEFAULT NULL,
-  `id_personnage` int(11) NOT NULL
+  `id_personnage` int(11) DEFAULT NULL,
+  `rarete` int(11) DEFAULT NULL,
+  `prix` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
