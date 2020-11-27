@@ -24,6 +24,8 @@ function nouvelleBoutique (){
     return $boutique;
 }
 
+
+
 switch($_GET['fonction']){
     case "nvBoutique": //obtenir une nouvelle boutique à partir de rien
         echo json_encode(nouvelleBoutique($tableauEquipement));
@@ -32,6 +34,8 @@ switch($_GET['fonction']){
         echo json_encode("Errreur d'argument !");
     }
 }
+
+
 
 ?>
 
