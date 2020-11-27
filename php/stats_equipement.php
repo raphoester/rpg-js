@@ -1,9 +1,12 @@
 
                                           
-<?php $sth = $dbh->prepare("SELECT * FROM equipement WHERE id_personnage= ".$_GET['id']);
-$sth->execute();
+<?php
+include("../donnees/data.php");
+ $sth = $pdo->query("SELECT * FROM equipement WHERE id_equipement= 1 ");
+ 
 
-$result = $sth->fetchAll();
-json_encode($result) ;
+$result = $sth->fetchAll(PDO::FETCH_OBJ);
+
+echo json_encode($result) ;
 
 ?>
