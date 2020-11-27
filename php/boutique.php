@@ -3,7 +3,7 @@
 define('TAILLE_BOUTIQUE', 6);
 include("../donnees/data.php");
 // $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-$tableauEquipement =  $pdo->query("select * from equipement")->fetchAll(); 
+$tableauEquipement =  $pdo->query("select * from equipement where id_joueur = null")->fetchAll(); 
 // var_dump($tableauEquipement);
 
 function tirageEquipement($tabEquip){
@@ -22,7 +22,6 @@ function tirageEquipement($tabEquip){
     return $tabTirage[$rand];
 }
 
-
 function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets (tableau)
     $boutique = array(); 
     for($i = 0 ; $i < TAILLE_BOUTIQUE ; $i++ ){
@@ -31,16 +30,23 @@ function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets
     return $boutique;
 }
 
-switch($_GET['fonction']){
-    case "nvBoutique": //obtenir une nouvelle boutique à partir de rien
-        echo json_encode(nouvelleBoutique($tableauEquipement));
-    break;
-    default:{
-        echo json_encode("Errreur d'argument !");
-    }
+function acheter($id_equip, $id_perso){
+
+    // $donnees_equip=$pdo->query("select * from equipement where id_equipement = "+"$id_equip")->fetch();
+
+    // $pdo->exec("insert into equipement(nom, pV, pM, pA, esquive, )")
 }
 
 
 
-?>
-
+switch($_GET['fonction']){
+    case "nvBoutique": //obtenir une nouvelle boutique à partir de rien
+        echo json_encode(nouvelleBoutique($tableauEquipement));
+    break;
+    case "acheter":
+        acheter($_GET["id_equip"], $_GET["id_perso"]);
+    break;
+    default:{
+        echo json_encode("Errreur d'argument !");
+    }
+}?>
