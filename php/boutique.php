@@ -1,6 +1,6 @@
 <?php 
 
-define(TAILLE_BOUTIQUE, 6);
+define('TAILLE_BOUTIQUE', 6);
 include("../donnees/data.php");
 // $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 $tableauEquipement =  $pdo->query("select * from equipement")->fetchAll(); 
@@ -18,7 +18,7 @@ function tirageEquipement($tabEquip){
 
 function nouvelleBoutique (){
     $boutique = [];//créer une nouvelle boutique de 6 objets (tableau)
-    for($i = 0 ; $i < TAILLE_BOUTIQUE ; $i++ ){
+    for($i = 0 ; $i < 'TAILLE_BOUTIQUE' ; $i++ ){
         $boutique.append(tirageEquipement($tableauEquipement));
     }
     return $boutique;
