@@ -1,12 +1,9 @@
 <?php 
 
-include("donnees/data.php");
+include("../donnees/data.php");
 // $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 $tableauEquipement =  $pdo->query("select * from equipement")->fetchAll(); 
 $tabEquip = [];
-
-
-
 
 function tirageEquipement($tabEquip){
     $tabTirage = [];
@@ -16,11 +13,9 @@ function tirageEquipement($tabEquip){
             $tabTirage->append($element);
         }
     }
-    
-    // var_dump($tabTirage);
-
+    return $tabTirage[$array_rand($tabTirage)];
 }
 
-tirageEquipement($tableauEquipement);
+echo tirageEquipement($tableauEquipement);
 
 ?>
