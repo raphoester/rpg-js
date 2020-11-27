@@ -6,7 +6,7 @@ $sth = $pdo->query("SELECT * FROM equipement WHERE id_personnage= 1 ");
 $result = $sth->fetchAll(PDO::FETCH_OBJ);
 
 $sth1 = $pdo->query("SELECT * FROM equipement WHERE id_equipement= 1 ");
-$result1 = $sth1->fetchAll(PDO::FETCH_OBJ);
+$result1 = $sth1->fetchAll(PDO::FETCH_OBJ); 
 
 
 
