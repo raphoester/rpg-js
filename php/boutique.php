@@ -3,7 +3,6 @@
 include("../donnees/data.php");
 // $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
 $tableauEquipement =  $pdo->query("select * from equipement")->fetchAll(); 
-$tabEquip = [];
 
 function tirageEquipement($tabEquip){
     $tabTirage = [];
@@ -15,7 +14,17 @@ function tirageEquipement($tabEquip){
     }
     return $tabTirage[$array_rand($tabTirage)];
 }
-
 echo tirageEquipement($tableauEquipement);
 
+
+switch($_GET['fonction']){
+    case "nvBoutique":
+        echo json_encode(tirageEquipement($tableauEquipement));
+    break;
+    default:{
+        echo json_encode("Errreur d'argument !");
+    }
+}
+
 ?>
+
