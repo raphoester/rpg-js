@@ -31,10 +31,9 @@ function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets
 }
 
 function acheter($id_equip, $id_perso){
-
-    // $donnees_equip=$pdo->query("select * from equipement where id_equipement = "+"$id_equip")->fetch();
-
-    // $pdo->exec("insert into equipement(nom, pV, pM, pA, esquive, )")
+    $donnees_equip=$pdo->query("select * from equipement where id_equipement = "+"$id_equip")->fetch();
+    $pdo->exec("update personnage set pO = pO - "+$donnees_equip['prix']+"where id_personnage = $id_perso");
+    $pdo->exec("insert into possede(id_personnage, id_equipement) values($id_equip, $id_perso)");
 }
 
 
