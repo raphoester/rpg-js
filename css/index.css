@@ -1,0 +1,62 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.block{
+    display: flex;
+}
+.perso{
+    width: 100px;
+    border: solid 2px black;
+    text-align: center;
+}
+.text{
+    margin: auto;
+}
+.text1{
+    text-decoration: none;
+    color: black;
+}
+.option{
+    margin-left: auto;
+}
+.img{
+    height: 100px;
+    width: 100px;
+    border: solid 1px black;
+}
+.img1{
+    text-align: -webkit-right;
+}
+.center{
+    text-align: center;
+    color: #110C6A;
+    margin-top: 5px;
+    font-size: large;
+}
+.button{
+    height: 27px;
+    width: 80px;
+}
+.button1{
+    height: 27px;
+    width: 102px;
+}
+.histo{
+    bottom: 0px;
+    position: absolute;
+    margin: inherit;
+}
+.histo1{
+    height: 125px;
+    width: 99%;
+    border: solid 1px black;
+    bottom: 41px;
+    position: absolute;
+    background-color: grey;
+}
+.flex{
+    display: flex;
+}
+.ceinteur{
+    text-align: center;
+}
