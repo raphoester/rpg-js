@@ -25,5 +25,4 @@ function afficher_equipement($id_perso, $id_equip){
 
 
 
-
 ?>
