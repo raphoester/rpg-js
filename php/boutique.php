@@ -3,7 +3,7 @@
 define('TAILLE_BOUTIQUE', 6);
 include("../donnees/data.php");
 // $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-$tableauEquipement =  $pdo->query("select * from equipement where id_joueur = null")->fetchAll(); 
+$tableauEquipement =  $pdo->query("SELECT * from equipement where id_equipement = null")->fetchAll(); 
 // var_dump($tableauEquipement);
 
 function tirageEquipement($tabEquip){//tirer unéquipement au hasard dans la base de données en respectant les indices de rareté
@@ -31,12 +31,13 @@ function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets
 }
 
 function acheter($id_equip, $id_perso){
+    $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
     //selection de la bonne pièce d'équipement dans la table 
-    $donnees_equip=$pdo->query("select * from equipement where id_equipement = "+"$id_equip")->fetch();
+    $donnees_equip=$pdo->query("SELECT * from equipement where id_equipement = "+"$id_equip")->fetch();
     // le prix de l'équipement est décompté du solde du joueur (aucune vérification - chiffres négatifs autorisés)
-    $pdo->exec("update personnage set pO = pO - "+$donnees_equip['prix']+"where id_personnage = $id_perso");
+    $pdo->exec("UPDATE personnage set pO = pO - "+$donnees_equip['prix']+"where id_personnage = $id_perso");
     //création d'une entrée dans la table relationnelle possède
-    $pdo->exec("insert into possede(id_personnage, id_equipement) values($id_equip, $id_perso)");
+    $pdo->exec("INSERT into possede(id_personnage, id_equipement) values($id_equip, $id_perso)");
 }
 
 
