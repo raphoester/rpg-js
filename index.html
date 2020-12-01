@@ -4,32 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rpg</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript">
-        <!--
-                function open_infos()
-                {
-                        width = 300;
-                        height = 200;
-                        if(window.innerWidth)
-                        {
-                                var left = (window.innerWidth-width)/2;
-                                var top = (window.innerHeight-height)/2;
-                        }
-                        else
-                        {
-                                var left = (document.body.clientWidth-width)/2;
-                                var top = (document.body.clientHeight-height)/2;
-                        }
-                        window.open('cara.html','nom_de_ma_popup','menubar=no, scrollbars=no, top='+top+', left='+left+', width='+width+', height='+height+'');
-                }
-        -->
+            function open_infos()
+            {
+                    width = 300;
+                    height = 200;
+                    if(window.innerWidth)
+                    {
+                            var left = (window.innerWidth-width)/2;
+                            var top = (window.innerHeight-height)/2;
+                    }
+                    else
+                    {
+                            var left = (document.body.clientWidth-width)/2;
+                            var top = (document.body.clientHeight-height)/2;
+                    }
+                    window.open('html/cara.html','nom_de_ma_popup','menubar=no, scrollbars=no, top='+top+', left='+left+', width='+width+', height='+height+'');
+            }
         </script>
 </head>
 <body>
     <section class="block">
         <div class="perso">
-            <a class="text1" href="#cara.html" onclick="javascript:open_infos();">nom du personnage</a>
+            <a class="text1" href="#" onclick="javascript:open_infos();">nom du personnage</a>
             <p class="text">Pv :</p>
             <p class="text">Pm :</p>
             <p class="text">Or :</p>
