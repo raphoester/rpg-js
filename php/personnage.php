@@ -4,13 +4,15 @@ include("../donnees/data.php");
 
 
 
-function statperso($id_perso){
-    $sth = $pdo->query("SELECT * FROM personnage WHERE id_personnage= 1 ");
- 
 
-    $result = $sth->fetchAll(PDO::FETCH_OBJ);
-    
-    echo json_encode($result) ;
+
+
+
+
+
+function statPerso($pdo, $id_joueur){
+    $joueur=$pdo->query("SELECT * FROM personnage WHERE id_personnage = $id_joueur")->fetch();
+    echo json_encode($joueur) ;
 }
 
 function creerPerso($pdo){
@@ -45,8 +47,18 @@ function creerPerso($pdo){
 
 
 switch($_GET["fonction"]){
+
     case("creerPerso"):
         creerPerso($pdo);
+    break;
+
+    case("afficherInfos"):
+        $id_perso = $_GET["id_perso"];
+        statPerso($pdo, $id_perso);
+    break;
+
+    default:
+        echo json_encode("erreur d'arguments");
     break;
 }
 
