@@ -1,15 +1,6 @@
 <?php
 include("../donnees/data.php");
 
-
-
-
-
-
-
-
-
-
 function statPerso($pdo, $id_joueur){
     $joueur=$pdo->query("SELECT * FROM personnage WHERE id_personnage = $id_joueur")->fetch();
     echo json_encode($joueur) ;
@@ -20,7 +11,6 @@ function creerPerso($pdo){
     $classe = $_GET["classe"];
     $nom = $_GET["nom"];
     
-
     switch($classe){
         case "crs":
             $pdo->exec("insert into personnage (nom, pV, pM, pA, pO, classe, esquive, defMagique, defPhysique, vitesse, image, niveau)
