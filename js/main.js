@@ -98,33 +98,27 @@ function combat(monstre, joueur){
         tourDuJoueur = false;
     }
 
-    //boucle de combat : une entité joue par boucle
-    while (combatEnCours)
-    {
-        console.log(tourDuJoueur);
-        if(tourDuJoueur)
-        {
-            monstre = joueurAttaque(monstre, joueur);
-            // le joueur joue
-            interface_combat_joueur(monstre, joueur);
-            tourDuJoueur = false;
-        }
-        else{
-            joueur = monstreAttaque(monstre, joueur);
-            //le monstre joue
-            interface_combat_monstre();
-            tourDuJoueur=true;
-        }
+    $("#id_attaquer").click(function(e){
+        
+        interface_combat_joueur(monstre, joueur);
+        monstre = joueurAttaque(monstre, joueur);
+
+        interface_combat_monstre();
+        joueur = monstreAttaque(monstre, joueur);
+        
         if(monstre["pV"]<=0)
         {
             console.log("Le monstre est mort !");
-            combatEnCours = false;
+            $("#id_attaquer").unbind("click");
         }
         else if(joueur["pV"]<=0){
+            $("#id_attaquer").unbind("click");
             defaite();
+            return;
         }
-    }
+    });
 }
+
 
 function joueurAttaque(monstre, joueur){
     let coupPorte = false;
