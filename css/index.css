@@ -112,7 +112,7 @@ td{
     width: 99%;
     border: solid 1px black;
     bottom: 41px;
-    position: absolute;
+    position: static;
     background-color: grey;
 }
 .flex{
