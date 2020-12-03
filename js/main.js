@@ -101,7 +101,8 @@ function combat(monstre, joueur){
     //boucle de combat : une entité joue par boucle
     while (combatEnCours)
     {
-        if(tourDuJoueur = true)
+        console.log(tourDuJoueur);
+        if(tourDuJoueur)
         {
             monstre = joueurAttaque(monstre, joueur);
             // le joueur joue
@@ -161,7 +162,8 @@ function monstreAttaque(monstre, joueur){
     }
     if (joueur.defMag < monstre.pM){
         joueur.pdV -= (monstre.pM - joueur.defMag);
-        $("#message").val("Le monstre inflige " + (monstre["pM"] - joueur["defMag"]) + " dégâts magiques.");
+        // $("#message").val("Le monstre inflige " + (monstre["pM"] - joueur["defMag"]) + " dégâts magiques.");
+        console.log("Le monstre inflige " + (monstre["pM"] - joueur["defMag"]) + " dégâts magiques.");
         coupPorte = true;
     }
     if (coupPorte == false){
