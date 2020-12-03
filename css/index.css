@@ -31,6 +31,10 @@ body{
           
 }
 
+body{
+    background-color: rgb(88, 88, 88);
+}
+
 .inventaire h4{
 
     text-align: center;
