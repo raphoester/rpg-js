@@ -7,7 +7,8 @@
     <title>rpg</title>
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
-    
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <script type="text/javascript">
         function open_infos() {
             width = 300;
@@ -25,7 +26,7 @@
     </script>
 </head>
 
-<body>
+<body class="jeux">
     <section id="popup_init" style="border: solid black 2px; margin : 2px; padding:10px;">
         <div>
             <form id="form_init">
@@ -74,7 +75,7 @@
             <p class="text" id="id_Pv"></p>
             <p class="text"><i class="fas fa-hat-wizard"></i> :</p>
             <p class="text" id="id_Pm"></p>
-            <p class="text"><i class="fas fa-coins"></i> :</p>           
+            <p class="text"><i class="fas fa-coins"></i> :</p>
             <p class="text" id="id_Or"></p>
         </div>
     </section>
@@ -84,21 +85,21 @@
 
 
 
-        <section class="img1">
+        <!--<section class="img1">
             <div class="img">
                 <img src="" alt="" width="" height="">
                 <p class="ceinteur">inserez l'image de l'adversaire</p>
             </div>
             <div>                
             </div>
-        </section>
+        </section> -->
         <section class="histo1">
             <div class="center">
                 Historique
             </div>
         </section>
 
-        <div class="histo">            
+        <div class="histo">
             <section class="flex">
                 <div class="zone">
                     <button class="button" id="id_attaquer">Attaquer</button>
@@ -115,9 +116,9 @@
             </section>
         </div>
 
-       
+
     </div>
-    <div class ="boutique">
+    <div class="boutique">
         <section>
             <div class="magasin">
                 <table border=1>
@@ -127,52 +128,106 @@
                     <TR>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le premier item</p>
-    
+                                <p>Nom premier item</p>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
+
                             </div>
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le deuxième item</p>
-    
+                                <p>Nom deuxième item</p>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
+
                             </div>
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le troisième item</p>
-    
+                                <p>Nom troisième item</p>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
+
                             </div>
-    
+
                         </TD>
                     </TR>
                     <TR>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le premier item</p>
-    
+                                <p>Nom quatrième item</p>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
+
                             </div>
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le deuxième item</p>
-    
+                                <p>Nom cinquième item</p>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
+
                             </div>
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le troisième item</p>
-    
+                                <p>Nom sixième item</p>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
+
                             </div>
-    
+
                         </TD>
-    
+
                     </TR>
-    
+
                 </table>
-    
+
             </div>
-    
-    
+
+
         </section>
         <br>
 
@@ -180,77 +235,99 @@
             <div class="inventaire">
                 <table border=1>
                     <TR>
-                        <TD colspan=9>Inventaire</TD>
+                        <TD colspan=5>
+                            <h4>Inventaire</h4>
+                        </TD>
                     </TR>
                     <TR>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le premier item</p> 
-        
+                                <h4>Couvre-chef :</h4>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+
+
+
                             </div>
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le deuxième item</p>
-        
+                                <h4>Veste :</h4>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+
+
                             </div>
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le troisième item</p>
-        
+                                <h4>Futal :</h4>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+
                             </div>
-        
+
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le quatrième item</p>
-        
+                                <h4>Choose :</h4>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+
+
                             </div>
-        
+
                         </TD>
                         <TD>
                             <div class="equipement">
-                                <p>Ceci est le cinquième item</p>
-        
+                                <h4>Arme :</h4>
+                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
+                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
+                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
+                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
+                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
+                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
+                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
+                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
+
                             </div>
-        
+
                         </TD>
-                        <TD>
-                            <div class="equipement">
-                                <p>Ceci est le sixième item</p>
-        
-                            </div>
-        
-                        </TD>
-                        <TD>
-                            <div class="equipement">
-                                <p>Ceci est le septième item</p>
-        
-                            </div>
-        
-                        </TD>
-                        <TD>
-                            <div class="equipement">
-                                <p>Ceci est le huitième item</p>
-        
-                            </div>
-        
-                        </TD>
-                        <TD>
-                            <div class="equipement">
-                                <p>Ceci est le neuvième item</p>
-        
-                            </div>
-        
-                        </TD>
-        
+
+
+
+
+
                     </TR>
-        
+
                 </table>
-        
+
             </div>
-        
+
         </section>
         <section class="histo1">
             <div class="center">
@@ -258,23 +335,7 @@
             </div>
         </section>
 
-        <div class="histo">
-            <section class="flex">
-                <div class="zone">
-                    <button class="button" id="id_ameliorer_arme">Ameliorer l'arme</button>
-                </div>
-                <div class="zone">
-                    <button class="button" id="id_protection">Améliorer la protection ?</button>
-                </div>
-                <div class="zone">
-                    <button class="button1" id="id_restaurer_pv">Restaurer les Pv</button>
-                </div>
-                <div class="zone">
-                    <button class="button" id="id_restaurer_pm">Restaurer les Pm</button>
-                </div>
-            </section>
 
-        </div>
 
     </div>
     <footer>
