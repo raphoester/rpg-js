@@ -21,7 +21,7 @@ En dessous, une liste des actions réalisables par le joueur (attaquer, défendr
 Au centre de la page, vous pourrez afficher une image de l’adversaire ou autre.
 
 Lorsqu’un joueur démarre, il a la possibilité de choisir sa classe (une guerrière, une magique, une stratégique, … (je vous laisse être inventif)). Chaque classe a des caractéristiques différentes. 
-L’adversaire clique sur un bouton attaquer pour lancer un combat. 
+Le joueur clique sur un bouton attaquer pour lancer un combat. 
 Un adversaire se présente (les adversaires peuvent aussi avoir des classes différentes et des caractéristiques différentes). 
 Vous ferez en sorte que les caractéristiques des adversaires soient toujours assez proches de celles du personnage (différence de 10% en supérieur ou inférieur par exemple). 
 
