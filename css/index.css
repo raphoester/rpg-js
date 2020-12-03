@@ -22,17 +22,62 @@ body{
 .magasin{
     text-align: center;
     margin: auto;
-    width: 400px;
-            
+    width: 800px;
+                
 }
 .inventaire{
-    text-align: center;
+    
     width: auto;
-      
+          
+}
+
+.inventaire h4{
+
+    text-align: center;
 }
 td{
     width: 300px;
     border: solid 1px black;
+    background-color: #b9bbbe;
+}
+/* Couleur des îcones */
+.fa-coins{
+    color: goldenrod;
+}
+.fa-heart{
+    color: red;
+}
+.fa-hat-wizard{
+    color: violet;
+}
+.fa-gem{
+    color: #cee4e6;
+}
+.ri-sword-line{
+    color: gray;
+}
+.ri-shield-line{
+    color:brown;
+}
+.ri-magic-line{
+    color: yellow;
+}
+
+/* Fin de la couleur des icônes */
+
+.cara{
+    font-size: 30px;
+    border: solid 5px black ;
+    border-radius: 10px;
+    background-color: #b9bbbe;
+    
+       
+}
+.stat{
+    background-color: #8e9297;
+}
+.nom{
+    text-align: center;    
 }
 
 .img{
@@ -67,7 +112,7 @@ td{
     width: 99%;
     border: solid 1px black;
     bottom: 41px;
-    position: absolute;
+    position: static;
     background-color: grey;
 }
 .flex{
