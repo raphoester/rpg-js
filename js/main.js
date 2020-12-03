@@ -17,40 +17,100 @@ $("#btn_valider").click(function(e){
     });
 })
 
+
+
 function chargerJoueur(index_joueur){
     $.ajax({
         url:"php/personnage.php?fonction=afficherInfos",
         data: "id_perso="+index_joueur, 
         dataType:"json",
         success:function(reponse){
-            return joueur;    
+            return reponse;
         }
     })
     return null;
 }
 
-
+//Gestion du jeu dans une boucle.
 function Partie(joueur){
+    var boutique = nouvelleBoutique(); 
     while (partieEnCours == true){
-        partieEnCours = boutique(joueur);
+        partieEnCours = boutique(joueur, boutique);
         partieEnCours = combat(joueur);
     }
 }
 
+function nouvelleBoutique(){
+    $.ajax({
+        url:"php/boutique.php?fonction=nvBoutique",
+        dataType: "json",
+        success:function(reponse){
+            return reponse;
+        }
+    })
+}
 
-function boutique(joueur){
-
+function boutique(joueur, boutique){
+    interface_boutique();
 }
 
 function combat(monstre, joueur){
-    while (partieEnCours){
-        combatEnCours = true;
-        while (combatEnCours)
+    interface_combat();
+    var combatEnCours = true;
+
+    let tourDuJoueur = true;
+    if(monstre.vitesse > joueur.vitesse){
+        tourDuJoueur = false;
+    }
+
+    //boucle de combat : une entité joue par boucle
+    while (combatEnCours)
+    {
+        if(tourDuJoueur = true)
         {
-            //combat... un tour de boucle par tour de jeu
-            //le joueur attaque 
-            //le monstre attaque
-            
+            // le joueur joue
+            interface_combat_joueur(monstre, joueur);
+            tourDuJoueur = false;
+        }
+        else{
+            //le monstre joue
+            interface_combat_monstre();
+            tourDuJoueur=true;
         }
     }
+}
+
+
+
+function joueurAttaque(monstre, joueur){
+    if (monstre.defPhys < joueur.pA){
+        monstre.pdV -= (joueur.pdA - monstre.defPhy);
+        $("#message").val("Le joueur inflige " + joueur.pM - monstre.defMag + "dégâts physiques.");
+    }
+    if (monstre.defMag < joueur.pM){
+        monstre.pdV -= (joueur.pM - monstre.defMag);
+        $("#message").val("Le joueur inflige " + joueur.pM - monstre.defMag + "dégâts magiques.");
+    }
+    return monstre;
+}
+
+function monstreAttaque(monstre, joueur){
+    //il se fait casser la gueule
+    return joueur;
+}
+
+function interface_boutique(){
+
+}
+
+function interface_combat(){
+
+}
+
+function interface_combat_joueur(monstre, joueur){
+    $("").click(attaquer(monstre, joueur))
+}
+
+function interface_combat_monstre(){
+
 }
