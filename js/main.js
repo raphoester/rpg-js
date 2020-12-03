@@ -83,19 +83,41 @@ function combat(monstre, joueur){
 
 
 function joueurAttaque(monstre, joueur){
+    
+    let coupPorte = false;
     if (monstre.defPhys < joueur.pA){
         monstre.pdV -= (joueur.pdA - monstre.defPhy);
         $("#message").val("Le joueur inflige " + joueur.pM - monstre.defMag + "dégâts physiques.");
+        coupPorte = true;
     }
+
     if (monstre.defMag < joueur.pM){
         monstre.pdV -= (joueur.pM - monstre.defMag);
         $("#message").val("Le joueur inflige " + joueur.pM - monstre.defMag + "dégâts magiques.");
+        coupPorte = true;
+    }
+    if (coupPorte == false){
+        $("#message").val("Aucun dégât n'a été infligé au monstre.");
     }
     return monstre;
 }
 
 function monstreAttaque(monstre, joueur){
-    //il se fait casser la gueule
+    
+    let coupPorte = false;
+    if (monstre.defPhys < joueur.pA){
+        monstre.pdV -= (joueur.pdA - monstre.defPhy);
+        $("#message").val("Le joueur inflige " + joueur.pM - monstre.defMag + "dégâts physiques.");
+        coupPorte = true;
+    }
+    if (joueur.defMag < monstre.pM){
+        joueur.pdV -= (monstre.pM - joueur.defMag);
+        $("#message").val("Le joueur inflige " + monstre.pM - joueur.defMag + "dégâts magiques.");
+        coupPorte = true;
+    }
+    if (coupPorte == false){
+        $("#message").val("Aucun dégât n'a été infligé au joueur.");
+    }
     return joueur;
 }
 
