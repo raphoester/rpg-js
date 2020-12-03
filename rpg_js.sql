@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 27 nov. 2020 à 14:13
+-- Généré le : mer. 02 déc. 2020 à 13:08
 -- Version du serveur :  10.4.16-MariaDB
 -- Version de PHP : 7.4.12
 
@@ -80,30 +80,13 @@ CREATE TABLE `personnage` (
   `pM` int(11) DEFAULT NULL,
   `pA` int(11) DEFAULT NULL,
   `pO` int(11) DEFAULT NULL,
-  `class` enum('crs','clown tueur','militant antifa') DEFAULT NULL,
+  `classe` set('crs','gilet jaune de combat','militant antifa','chef kebabier') DEFAULT NULL,
   `esquive` int(11) DEFAULT NULL,
   `defMagique` int(11) DEFAULT NULL,
   `defPhysique` int(11) DEFAULT NULL,
   `vitesse` int(11) DEFAULT NULL,
-  `image` varchar(500) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `personnage`
---
-
-INSERT INTO `personnage` (`id_personnage`, `nom`, `pV`, `pM`, `pA`, `pO`, `class`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `image`) VALUES
-(1, 'Monperso', 10, 10, 10, 10, 'crs', 10, 10, 10, 10, NULL);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `possede`
---
-
-CREATE TABLE `possede` (
-  `id_equipement` int(11) NOT NULL,
-  `id_personnage` int(11) NOT NULL
+  `image` varchar(500) DEFAULT NULL,
+  `niveau` int(11) NOT NULL DEFAULT 3
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -129,13 +112,6 @@ ALTER TABLE `personnage`
   ADD PRIMARY KEY (`id_personnage`);
 
 --
--- Index pour la table `possede`
---
-ALTER TABLE `possede`
-  ADD KEY `id_equipement` (`id_equipement`),
-  ADD KEY `id_personnage` (`id_personnage`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -155,18 +131,7 @@ ALTER TABLE `monstre`
 -- AUTO_INCREMENT pour la table `personnage`
 --
 ALTER TABLE `personnage`
-  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- Contraintes pour les tables déchargées
---
-
---
--- Contraintes pour la table `possede`
---
-ALTER TABLE `possede`
-  ADD CONSTRAINT `possede_ibfk_1` FOREIGN KEY (`id_equipement`) REFERENCES `equipement` (`id_equipement`),
-  ADD CONSTRAINT `possede_ibfk_2` FOREIGN KEY (`id_personnage`) REFERENCES `personnage` (`id_personnage`);
+  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

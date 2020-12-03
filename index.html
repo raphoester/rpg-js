@@ -25,6 +25,52 @@
         </script>
 </head>
 <body>
+    <section id="popup_init" style="border: solid black 2px; margin : 2px; padding:10px;">
+        <div>
+        <form id="form_init">
+            <div>
+                <h1>Bienvenue ! </h1>
+                <h2>
+                    Commencez par créer votre personnage :
+                </h2>
+                <h3>Sélectionnez votre classe et votre nom.</h3>
+                
+                <div>
+                    <label for="nom">Nom</label>
+                    <input type="text" id="nom" name="nom" placeholder="Jean Charles" required value="Jean Charles">
+                </div>
+                <div>
+                    <div>
+                        <label for="crs">CRS</label>
+                        <input name="classe" id="classe" type="radio" value="crs" checked="checked">   
+                    </div>
+                    <div>
+                        <label for="gilet_jaune">Gilet jaune de combat</label>
+                        <input id="gilet_jaune" name= "classe" type="radio" value="gilet_jaune">
+                    </div>
+                    <div>
+                        <label for="militant">Militant antifa</label>
+                        <input type="radio" name="classe" id="militant" value="militant">
+                    </div>
+                    <div>
+                        <label for="chef">Chef Kebabier</label>
+                        <input type="radio" name="classe" id="chef" value="chef_kebabier">
+                    </div>
+                </div>
+                <div id="valider">
+                    <button id="btn_valider">Valider</button>
+                </div>
+
+
+                
+            
+            
+            </div>
+            
+
+        </form>
+        </div>
+    </section>
     <section class="block">
         <div class="perso">
             <a class="text1" id="id_nom" href="#" onclick="javascript:open_infos();">nom du personnage</a>
@@ -76,5 +122,7 @@
             </div>
         </section>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
