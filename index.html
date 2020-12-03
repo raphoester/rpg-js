@@ -1,121 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>rpg</title>
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript">
-            function open_infos()
-            {
-                    width = 300;
-                    height = 200;
-                    if(window.innerWidth)
-                    {
-                            var left = (window.innerWidth-width)/2;
-                            var top = (window.innerHeight-height)/2;
-                    }
-                    else
-                    {
-                            var left = (document.body.clientWidth-width)/2;
-                            var top = (document.body.clientHeight-height)/2;
-                    }
-                    window.open('html/cara.html','nom_de_ma_popup','menubar=no, scrollbars=no, top='+top+', left='+left+', width='+width+', height='+height+'');
+        function open_infos() {
+            width = 300;
+            height = 200;
+            if (window.innerWidth) {
+                var left = (window.innerWidth - width) / 2;
+                var top = (window.innerHeight - height) / 2;
             }
-        </script>
+            else {
+                var left = (document.body.clientWidth - width) / 2;
+                var top = (document.body.clientHeight - height) / 2;
+            }
+            window.open('html/cara.html', 'nom_de_ma_popup', 'menubar=no, scrollbars=no, top=' + top + ', left=' + left + ', width=' + width + ', height=' + height + '');
+        }
+    </script>
 </head>
+
 <body>
     <section id="popup_init" style="border: solid black 2px; margin : 2px; padding:10px;">
         <div>
-        <form id="form_init">
-            <div>
-                <h1>Bienvenue ! </h1>
-                <h2>
-                    Commencez par créer votre personnage :
-                </h2>
-                <h3>Sélectionnez votre classe et votre nom.</h3>
-                
+            <form id="form_init">
                 <div>
-                    <label for="nom">Nom</label>
-                    <input type="text" id="nom" name="nom" placeholder="Jean Charles" required value="Jean Charles">
+                    <h1>Bienvenue ! </h1>
+                    <h2>
+                        Commencez par créer votre personnage :
+                    </h2>
+                    <h3>Sélectionnez votre classe et votre nom.</h3>
+
+                    <div>
+                        <label for="nom">Nom</label>
+                        <input type="text" id="nom" name="nom" placeholder="Jean Charles" required value="Jean Charles">
+                    </div>
+                    <div>
+                        <div>
+                            <label for="crs">CRS</label>
+                            <input name="classe" id="classe" type="radio" value="crs" checked="checked">
+                        </div>
+                        <div>
+                            <label for="gilet_jaune">Gilet jaune de combat</label>
+                            <input id="gilet_jaune" name="classe" type="radio" value="gilet_jaune">
+                        </div>
+                        <div>
+                            <label for="militant">Militant antifa</label>
+                            <input type="radio" name="classe" id="militant" value="militant">
+                        </div>
+                        <div>
+                            <label for="chef">Chef Kebabier</label>
+                            <input type="radio" name="classe" id="chef" value="chef_kebabier">
+                        </div>
+                    </div>
+                    <div id="valider">
+                        <button id="btn_valider">Valider</button>
+                    </div>
                 </div>
-                <div>
-                    <div>
-                        <label for="crs">CRS</label>
-                        <input name="classe" id="classe" type="radio" value="crs" checked="checked">   
-                    </div>
-                    <div>
-                        <label for="gilet_jaune">Gilet jaune de combat</label>
-                        <input id="gilet_jaune" name= "classe" type="radio" value="gilet_jaune">
-                    </div>
-                    <div>
-                        <label for="militant">Militant antifa</label>
-                        <input type="radio" name="classe" id="militant" value="militant">
-                    </div>
-                    <div>
-                        <label for="chef">Chef Kebabier</label>
-                        <input type="radio" name="classe" id="chef" value="chef_kebabier">
-                    </div>
-                </div>
-                <div id="valider">
-                    <button id="btn_valider">Valider</button>
-                </div>
-            </div>
-        </form>
+            </form>
         </div>
     </section>
+
+
     <section class="block">
         <div class="perso">
             <a class="text1" id="id_nom" href="#" onclick="javascript:open_infos();">nom du personnage</a>
-            <p class="text">Pv :</p> <p class="text" id="id_Pv"></p>
-            <p class="text">Pm :</p> <p class="text" id="id_Pm"></p>
-            <p class="text">Or :</p> <p class="text" id="id_Or"></p>
-        </div>
-
-        <div class="option">
-                <label for="choisir-une-option">Choisir une option : </label>
-            <select class="space" name="" id="">
-                <option value="">--Selectionnez votre option--</option>
-                <option value="ameliorer l'arme" id="id_ameliorer_arme">Ameliorer l'arme</option>
-                <option value="la protection" id="id_protection">La protection</option>
-                <option value="la magie " id="id_magie">La magie</option>
-                <option value="restaurer les pv" id="id_restaurer_pv"> Restaurer les pv</option>
-                <option value="restaurer les mp" id="id_restaurer_mp">Restaurer les mp</option>
-            </select>
+            <p class="text">Pv :</p>
+            <p class="text" id="id_Pv"></p>
+            <p class="text">Pm :</p>
+            <p class="text" id="id_Pm"></p>
+            <p class="text">Or :</p>
+            <p class="text" id="id_Or"></p>
         </div>
     </section>
 
     <br>
+    <div class="Combat">
 
-    <section class="img1">
-        <div class="img">
-            <img src="" alt="" width="" height=""> <p class="ceinteur">inserez l'image de l'adversaire</p>
-        </div>
-    </section>
-    <section class="histo1">
-        <div class="center">
-            Historique
-        </div>
-    </section>
 
-    <footer class="histo">
-        
-        <section class="flex">
-            <div class="zone">
-                <button class="button" id="id_attaquer">Attaquer</button>
-            </div>
-            <div class="zone">
-                <button class="button" id="id_defendre">Defendre</button>
-            </div>
-            <div class="zone">
-                <button class="button1" id="id_sort">Utiliser un sort</button>
-            </div>
-            <div class="zone">
-                <button class="button" id="id_fuir">Fuir</button>
+
+        <section class="img1">
+            <div class="img">
+                <img src="" alt="" width="" height="">
+                <p class="ceinteur">inserez l'image de l'adversaire</p>
             </div>
         </section>
+        <section class="histo1">
+            <div class="center">
+                Historique
+            </div>
+        </section>
+
+        <div class="histo">
+            <section class="flex">
+                <div class="zone">
+                    <button class="button" id="id_attaquer">Attaquer</button>
+                </div>
+                <div class="zone">
+                    <button class="button" id="id_defendre">Defendre</button>
+                </div>
+                <div class="zone">
+                    <button class="button1" id="id_sort">Utiliser un sort</button>
+                </div>
+                <div class="zone">
+                    <button class="button" id="id_fuir">Fuir</button>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+    <div class="boutique">
+        <section>
+            <div class="magasin">
+                <table border=1>
+                    <TR>
+                        <TD colspan=3>Magasin</TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le premier item</p>
+
+                            </div>
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le deuxième item</p>
+
+                            </div>
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le troisième item</p>
+
+                            </div>
+
+                        </TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le premier item</p>
+
+                            </div>
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le deuxième item</p>
+
+                            </div>
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le troisième item</p>
+
+                            </div>
+
+                        </TD>
+
+                    </TR>
+
+                </table>
+
+            </div>
+
+
+        </section>
+        <br>
+
+        <section>
+            <div class="inventaire">
+                <table border=1>
+                    <TR>
+                        <TD colspan=9>Inventaire</TD>
+                    </TR>
+                    <TR>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le premier item</p>
+
+                            </div>
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le deuxième item</p>
+
+                            </div>
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le troisième item</p>
+
+                            </div>
+
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le quatrième item</p>
+
+                            </div>
+
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le cinquième item</p>
+
+                            </div>
+
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le sixième item</p>
+
+                            </div>
+
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le septième item</p>
+
+                            </div>
+
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le huitième item</p>
+
+                            </div>
+
+                        </TD>
+                        <TD>
+                            <div class="equipement">
+                                <p>Ceci est le neuvième item</p>
+
+                            </div>
+
+                        </TD>
+
+                    </TR>
+
+                </table>
+
+            </div>
+
+        </section>
+        <section class="histo1">
+            <div class="center">
+                Historique
+            </div>
+        </section>
+
+        <div class="histo">
+            <section class="flex">
+                <div class="zone">
+                    <button class="button" id="id_ameliorer_arme">Ameliorer l'arme</button>
+                </div>
+                <div class="zone">
+                    <button class="button" id="id_protection">Améliorer la protection ?</button>
+                </div>
+                <div class="zone">
+                    <button class="button1" id="id_restaurer_pv">Restaurer les Pv</button>
+                </div>
+                <div class="zone">
+                    <button class="button" id="id_restaurer_pm">Restaurer les Pm</button>
+                </div>
+            </section>
+
+        </div>
+
+    </div>
+    <footer>
+
+
     </footer>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
