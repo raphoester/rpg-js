@@ -34,6 +34,39 @@ td{
     width: 300px;
     border: solid 1px black;
 }
+.fa-coins{
+    color: goldenrod;
+}
+.fa-heart{
+    color: red;
+}
+.fa-hat-wizard{
+    color: violet;
+}
+.ri-sword-line{
+    color: gray;
+}
+.ri-shield-line{
+    color:brown;
+}
+.ri-magic-line{
+    color: yellow;
+}
+
+.cara{
+    font-size: 30px;
+    border: solid 5px black ;
+    border-radius: 10px;
+    background-color: #b9bbbe;
+    
+       
+}
+.stat{
+    background-color: #8e9297;
+}
+.nom{
+    text-align: center;    
+}
 
 .img{
     height: 100px;
