@@ -19,6 +19,22 @@ body{
 .option{
     margin-left: auto;
 }
+.magasin{
+    text-align: center;
+    margin: auto;
+    width: 400px;
+            
+}
+.inventaire{
+    text-align: center;
+    width: auto;
+      
+}
+td{
+    width: 300px;
+    border: solid 1px black;
+}
+
 .img{
     height: 100px;
     width: 100px;
