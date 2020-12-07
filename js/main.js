@@ -1,3 +1,6 @@
+$("h1").css({color:'blue'});
+
+
 
 $("#btn_valider").click(function(e){
     e.preventDefault();
@@ -11,16 +14,16 @@ $("#btn_valider").click(function(e){
         success:function(reponse){
             $("#popup_init").css({display:"none"})
             var index_joueur = (JSON.parse(reponse)[0]);
-
-
             var joueur = chargerJoueur(index_joueur);
-            // console.log(joueur);
-            
         }
     });
 })
 
-
+// class joueur{
+//     constructor (nom, defMag, defPhys, esquive, vitesse, pA, pO, pM, pV, niveau){
+//         this.
+//     }
+// }
 
 
 function chargerJoueur(index_joueur){
@@ -40,28 +43,15 @@ function chargerJoueur(index_joueur){
             reponse["pV"]=parseInt(reponse["pV"]);
             reponse["niveau"]=parseInt(reponse["niveau"]);
             
-            Partie(reponse);
+            nouvelleBoutique(reponse); 
         }
     })
 }
 
 
-//Gestion du jeu dans une boucle.
-function Partie(joueur){
-    // console.log("Partie" + joueur);
-    let partieEnCours = true;
-    var boutique_joueur = nouvelleBoutique(); 
-    while (partieEnCours == true){
-        partieEnCours = boutique(joueur, boutique_joueur);
-        nouveauMonstre(joueur);
-        partieEnCours = false;
-    }
-}
-
 
 
 function nouveauMonstre(joueur){
-    // console.log("nouveauMonstre" + joueur);
     var niveau = joueur["niveau"];
     $.ajax({
         url:"php/combat.php?fonction=creerMonstre",
@@ -78,9 +68,6 @@ function nouveauMonstre(joueur){
             reponse["pV"]=parseInt(reponse["pV"]);
             combat(reponse, joueur);
             
-        },
-        error:function(e){
-            console.log(e);
         }
     })
 }
@@ -89,11 +76,7 @@ function nouveauMonstre(joueur){
 
 function combat(monstre, joueur){
 
-    console.log("combat commencé");
     interface_combat();
-    var combatEnCours = true;
-
-    let tourDuJoueur = true;
     if(monstre["vitesse"] > joueur["vitesse"]){
         tourDuJoueur = false;
     }
@@ -110,6 +93,7 @@ function combat(monstre, joueur){
         {
             console.log("Le monstre est mort !");
             $("#id_attaquer").unbind("click");
+            nouvelleBoutique(joueur)
         }
         else if(joueur["pV"]<=0){
             $("#id_attaquer").unbind("click");
@@ -123,7 +107,6 @@ function combat(monstre, joueur){
 function joueurAttaque(monstre, joueur){
     let coupPorte = false;
 
-    // console.log(monstre["defPhys"]);
     if (monstre["defPhys"] < joueur["pA"]){
 
         monstre["pV"] -= (joueur["pA"] - monstre["defPhys"]);
@@ -135,13 +118,13 @@ function joueurAttaque(monstre, joueur){
     if (monstre["defMag"] < joueur["pM"]){
         monstre["pV"] -= (joueur["pM"] - monstre["defMag"]);
 
-        // $("#message").val("Le joueur inflige " + joueur["pM"] - monstre["defMag"] + "dégâts magiques.");
         console.log("Le joueur inflige " + (joueur["pM"] - monstre["defMag"] )+ " dégâts magiques.");
         coupPorte = true;
     }
     if (coupPorte == false){
         $("#message").val("Aucun dégât n'a été infligé au monstre.");
     }
+    actualise_monstre(monstre)
     return monstre;
 }
 
@@ -163,17 +146,19 @@ function monstreAttaque(monstre, joueur){
     if (coupPorte == false){
         $("#message").val("Aucun dégât n'a été infligé au joueur.");
     }
+    actualise_joueur(joueur);
     return joueur;
 }
 
-function interface_boutique(){
-
+function interface_combat(monstre){
+    $(".boutique").css({display:"none"});
+    $(".combat").css({display:"initial"});
+    $(".actions_combat").css({display:"initial"});
+    $(".histo1").css({display:"initial"});
 }
 
-function interface_combat(){
-
-}
-
+function actualise_monstre(monstre)
+{}
 function interface_combat_joueur(monstre, joueur){
     // $("").click(attaquer(monstre, joueur))
 }
@@ -188,16 +173,32 @@ function defaite(){
 }
 
 
-function nouvelleBoutique(){
+function nouvelleBoutique(joueur){
+    
     $.ajax({
         url:"php/boutique.php?fonction=nvBoutique",
         dataType: "json",
         success:function(reponse){
-            return reponse;
+            boutique(joueur, reponse);
         }
+        // error:function(reponse)
     })
 }
 
 function boutique(joueur, boutique){
-    interface_boutique();
+    $("#btn_combat").css({display:"initial"});
+    $(".combat").css({display:'none'});
+    $(".histo1").css({display:"none"});
+    $(".actions_combat").css({display:"none"});
+    $(".boutique").css({display:"initial"});
+    $(".inventaire").css({display:"initial"});
+    $("#btn_combat").css({color:"red"});
+    $("#btn_combat").click(function(){
+        nouveauMonstre(joueur);
+    })
+
+}
+
+function actualise_joueur(joueur){
+    
 }

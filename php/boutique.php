@@ -1,9 +1,9 @@
 <?php 
 
-define('TAILLE_BOUTIQUE', 6);
+define('TAILLE_BOUTIQUE', 3);
 include("../donnees/data.php");
 // $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-$tableauEquipement =  $pdo->query("SELECT * from equipement where id_equipement = null")->fetchAll(); 
+$tableauEquipement =  $pdo->query("SELECT * from equipement")->fetchAll(); 
 // var_dump($tableauEquipement);
 
 function tirageEquipement($tabEquip){//tirer unéquipement au hasard dans la base de données en respectant les indices de rareté
@@ -23,6 +23,8 @@ function tirageEquipement($tabEquip){//tirer unéquipement au hasard dans la bas
 }
 
 function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets (renvoie un tableau)
+
+    
     $boutique = array(); 
     for($i = 0 ; $i < TAILLE_BOUTIQUE ; $i++ ){
         $boutique[] = tirageEquipement($tabEquip);

@@ -80,6 +80,12 @@
         </div>
     </section>
 
+    <div class= "bouton_combattre">
+        <div>
+            <button id="btn_combat"><strong style="font-size: large;"> Combattre !</strong></button>
+        </div>
+    </div>
+
     <br>
      <div class="Combat">
 
@@ -94,7 +100,7 @@
             </div>
         </section>  -->
 
-        <div class="histo">
+        <div class="actions_combat" style="display: none;">
             <section class="flex">
                 <div class="zone">
                     <button class="button" id="id_attaquer">Attaquer</button>
@@ -114,32 +120,31 @@
 
     </div>
 
-
     <div class="boutique">
         <section>
             <div class="magasin">
                 <table border=1>
                     <TR>
-                        <TD colspan=3>Magasin</TD>
+                        <TD colspan=3><h1>Magasin</h1></TD>
                     </TR>
                     <TR>
                         <TD>
-                            <div class="equipement">
-                                <p>Nom premier item</p>
-                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
-                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
-                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
-                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
-                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
-                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
-                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
-                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
-                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
-
-                            </div>
+                        <div class="equipement" id="btk_eq_1">
+                            <p id="nom_objet_btk">Mon premier objet</p>
+                            <p id="equipement_pv"><i class="fas fa-heart"></i> : <strong id="eq_btk_pv"></strong></p>
+                            <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> : <strong id="eq_btk_pm"></strong></p>
+                            <p id="equipement_atq"><i class="ri-sword-line"></i> : <strong id="eq_btk_pA"></strong></p>
+                            <p id="equipement_esquive"><i class="fas fa-wind"></i> : <strong id="eq_btk_esquive"></strong></p>
+                            <p id="equipement_defmag"><i class="ri-magic-line"></i> : <strong id="eq_btk_defMag"></strong></p>
+                            <p id="equipement_def"><i class="ri-shield-line"></i> : <strong id="eq_btk_defPhys"></strong></p>
+                            <p id="equipement_vitesse"><i class="ri-speed-line"></i> : <strong id="eq_btk_vitesse"></strong></p>
+                            <p id="equipement_rare"><i class="far fa-gem"></i> : <strong id="eq_btk_rarete"></strong></p>
+                            <p id="equipement_prix"><i class="fas fa-coins"></i> :<strong id="eq_btk_prix"></strong></p>
+                        </div>
                         </TD>
+                    
                         <TD>
-                            <div class="equipement">
+                            <div class="equipement" id="btk_eq_2">
                                 <p>Nom deuxième item</p>
                                 <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
                                 <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
@@ -154,7 +159,7 @@
                             </div>
                         </TD>
                         <TD>
-                            <div class="equipement">
+                            <div class="equipement" id="btk_eq_3">
                                 <p>Nom troisième item</p>
                                 <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
                                 <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
@@ -170,56 +175,6 @@
 
                         </TD>
                     </TR>
-                    <TR>
-                        <TD>
-                            <div class="equipement">
-                                <p>Nom quatrième item</p>
-                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
-                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
-                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
-                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
-                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
-                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
-                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
-                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
-                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
-
-                            </div>
-                        </TD>
-                        <TD>
-                            <div class="equipement">
-                                <p>Nom cinquième item</p>
-                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
-                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
-                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
-                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
-                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
-                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
-                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
-                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
-                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
-
-                            </div>
-                        </TD>
-                        <TD>
-                            <div class="equipement">
-                                <p>Nom sixième item</p>
-                                <p id="equipement_pv"><i class="fas fa-heart"></i> :</p>
-                                <p id="equipement_pm"><i class="fas fa-hat-wizard"></i> :</p>
-                                <p id="equipement_atq"><i class="ri-sword-line"></i> :</p>
-                                <p id="equipement_esquive"><i class="fas fa-wind"></i> : </p>
-                                <p id="equipement_defmag"><i class="ri-magic-line"></i> :</p>
-                                <p id="equipement_def"><i class="ri-shield-line"></i> :</p>
-                                <p id="equipement_vitesse"><i class="ri-speed-line"></i> :</p>
-                                <p id="equipement_rare"><i class="far fa-gem"></i> :</p>
-                                <p id="equipement_prix"><i class="fas fa-coins"></i> :</p>
-
-                            </div>
-
-                        </TD>
-
-                    </TR>
-
                 </table>
 
             </div>
@@ -326,9 +281,6 @@
             </div>
 
         </section>
-        <div>
-            
-        </div>
         <section class="histo1">
             <div class="center">
                 Historique
