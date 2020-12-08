@@ -115,6 +115,11 @@ td{
     height: 27px;
     width: 102px;
 }
+
+#contenu_histo{
+    display:flex;
+}
+
 .histo{
     bottom: 0px;
     position: absolute;

@@ -69,7 +69,6 @@ function nouveauMonstre(joueur){
             reponse["pM"]=parseInt(reponse["pM"]);
             reponse["pV"]=parseInt(reponse["pV"]);
             combat(reponse, joueur);
-            
         }
     })
 }
@@ -122,19 +121,24 @@ function joueurAttaque(monstre, joueur){
 
         monstre["pV"] -= (joueur["pA"] - monstre["defPhys"]);
         
-        console.log(joueur["nom"] +" inflige " + (joueur["pA"] - monstre["defPhys"] )+ " dégâts physiques.");
+        console.log();
         coupPorte = true;
+        document.getElementById('contenu_histo').innerHTML += '<p>' + joueur["nom"] +" inflige " + (joueur["pA"] - monstre["defPhys"] ) + " dégâts physiques.</p>";
     }
 
     if (monstre["defMag"] < joueur["pM"]){
         monstre["pV"] -= (joueur["pM"] - monstre["defMag"]);
 
-        console.log(joueur["nom"] +" inflige " + (joueur["pM"] - monstre["defMag"] )+ " dégâts magiques.");
+        document.getElementById('contenu_histo').innerHTML += '<p>' + joueur["nom"] + " inflige " + (joueur["pM"] - monstre["defMag"]) + " dégâts magiques. </p>";
+        console.log();
         coupPorte = true;
     }
     if (coupPorte == false){
+        document.getElementById('contenu_histo').innerHTML += '<p>' + joueur["nom"] + "inflige" + (joueur["pM"] - monstre["defMag"]) + "dégâts magiques.</p>";
+        
         $("#message").val("Aucun dégât n'a été infligé à "+monstre["nom"] );
     }
+    
     return monstre;
 }
 

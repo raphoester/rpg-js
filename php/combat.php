@@ -5,8 +5,9 @@ function creerMonstre($pdo){
     $niveau = $_GET['niveau'];
     $tableau_monstres = $pdo->query('select * from monstre')->fetchAll();
     
-    
+    // var_dump ($tableau_monstres);
     $rand = rand(0, count($tableau_monstres)-1);
+    // echo $rand;
     $nom = $tableau_monstres[$rand]["nom"];
     $image = $tableau_monstres[$rand]["image"];
     $id_monstre = $tableau_monstres[$rand]["id_monstre"];
