@@ -139,3 +139,13 @@ td{
 .ceinteur{
     text-align: center;
 }
+
+.element_histo{
+    width: 100px;
+    border: 3px dotted yellow;
+    color: white;
+    background-color: rgb(143, 81, 93);
+    font-weight: bold;
+    padding: 3px 3px 3px 3px ;
+    margin: 3px 3px 3px 3px ;
+}

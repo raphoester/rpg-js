@@ -121,22 +121,20 @@ function joueurAttaque(monstre, joueur){
 
         monstre["pV"] -= (joueur["pA"] - monstre["defPhys"]);
         
-        console.log();
         coupPorte = true;
-        document.getElementById('contenu_histo').innerHTML += '<p>' + joueur["nom"] +" inflige " + (joueur["pA"] - monstre["defPhys"] ) + " dégâts physiques.</p>";
+        document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo">' + joueur["nom"] +" inflige " + (joueur["pA"] - monstre["defPhys"] ) + " dégâts physiques.</p>";
     }
 
     if (monstre["defMag"] < joueur["pM"]){
         monstre["pV"] -= (joueur["pM"] - monstre["defMag"]);
 
-        document.getElementById('contenu_histo').innerHTML += '<p>' + joueur["nom"] + " inflige " + (joueur["pM"] - monstre["defMag"]) + " dégâts magiques. </p>";
-        console.log();
+        document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo">' + joueur["nom"] + " inflige " + (joueur["pM"] - monstre["defMag"]) + " dégâts magiques. </p>";
         coupPorte = true;
     }
     if (coupPorte == false){
-        document.getElementById('contenu_histo').innerHTML += '<p>' + joueur["nom"] + "inflige" + (joueur["pM"] - monstre["defMag"]) + "dégâts magiques.</p>";
+        document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo">' + "Aucun dégât n'a été infligé à "+monstre["nom"] +"</p>";
         
-        $("#message").val("Aucun dégât n'a été infligé à "+monstre["nom"] );
+        $("#message").val();
     }
     
     return monstre;
@@ -147,18 +145,16 @@ function monstreAttaque(monstre, joueur){
     let coupPorte = false;
     if (joueur["defPhysique"] < monstre["pA"]){
         joueur["pV"] -= (monstre["pA"] - joueur["defPhysique"]);
-        // $("#message").val("Le joueur inflige " + joueur["pM"] - monstre["defMag"] + "dégâts physiques.");
-        console.log(monstre["nom"] +" inflige " + (monstre["pA"] - joueur["defPhysique"]) + " dégâts physiques.");
+        document.getElementById("contenu_histo").innerHTML += ("<p class = 'element_histo'>"+monstre["nom"] +" inflige " + (monstre["pA"] - joueur["defPhysique"]) + " dégâts physiques.</p>");
         coupPorte = true;
     }
     if (joueur["defMagique"] < monstre["pM"]){
         joueur["pV"] -= (monstre["pM"] - joueur["defMagique"]);
-        // $("#message").val("Le monstre inflige " + (monstre["pM"] - joueur["defMag"]) + " dégâts magiques.");
-        console.log(monstre["nom"] +" inflige " + (monstre["pM"] - joueur["defMagique"]) + " dégâts magiques.");
+        document.getElementById("contenu_histo").innerHTML += ("<p class = 'element_histo'>" + monstre["nom"] +" inflige " + (monstre["pM"] - joueur["defMagique"]) + " dégâts magiques.</p>");
         coupPorte = true;
     }
     if (coupPorte == false){
-        console.log("Aucun dégât n'a été infligé au joueur.");
+        document.getElementById("contenu_histo").innerHTML += ("<p class = 'element_histo'>"+ monstre["nom"] + " échoue son attaque.</p>");
     }
     return joueur;
 }
