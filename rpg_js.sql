@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : jeu. 03 déc. 2020 à 19:45
+-- Généré le : mer. 09 déc. 2020 à 18:42
 -- Version du serveur :  10.4.16-MariaDB
 -- Version de PHP : 7.4.12
 
@@ -67,7 +67,11 @@ CREATE TABLE `monstre` (
 --
 
 INSERT INTO `monstre` (`id_monstre`, `nom`, `image`) VALUES
-(1, 'Clément', NULL);
+(1, 'Clément', 'img/clement.png'),
+(2, 'xavier dupont de ligonnès', 'img/xavier_dupont.jpg'),
+(3, 'Marcia', 'img/marcia.jpg'),
+(4, 'Thanos', 'img/thanos.jpg'),
+(5, 'Ben Laden', 'img/ben_laden.jpg');
 
 -- --------------------------------------------------------
 
@@ -96,95 +100,68 @@ CREATE TABLE `personnage` (
 --
 
 INSERT INTO `personnage` (`id_personnage`, `nom`, `pV`, `pM`, `pA`, `pO`, `classe`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `image`, `niveau`) VALUES
-(30, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(31, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(32, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(33, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(34, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(35, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(36, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(37, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(38, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(39, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(40, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(41, 'Jean Charles', 70, 120, 10, 10, 'militant antifa', 70, 10, 5, 90, '../img/militant.jpg', 1),
-(42, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(43, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(44, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(45, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(46, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(47, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(48, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(49, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(50, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(51, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(52, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(53, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(54, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(55, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(56, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(57, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(58, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(59, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(60, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(61, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(62, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(63, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(64, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(65, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(66, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(67, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(68, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(69, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(70, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(71, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(72, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(73, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(74, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(75, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(76, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(77, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(78, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(79, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(80, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(81, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(82, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(83, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(84, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(85, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(86, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(87, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(88, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(89, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(90, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(91, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(92, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(93, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(94, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(95, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(96, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(97, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(98, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(99, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(100, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(101, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(102, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(103, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(104, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(105, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(106, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(107, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(108, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(109, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(110, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(111, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(112, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(113, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
-(114, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(115, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(116, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(117, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
-(118, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1);
+(182, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(183, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(184, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(185, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(186, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(187, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(188, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(189, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(190, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(191, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(192, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(193, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(194, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, '../img/crs.jpg', 1),
+(195, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, '../img/kebabier.jpg', 1),
+(196, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(197, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(198, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(199, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(200, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(201, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(202, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(203, 'Jean Charles', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(204, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(205, 'Jean Charles', 70, 120, 10, 10, 'militant antifa', 70, 10, 5, 90, 'img/militant.jpg', 1),
+(206, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(207, 'Le roi des juifs', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(208, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(209, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(210, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(211, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(212, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(213, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(214, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(215, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(216, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(217, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(218, 'Le roi des juifs', 100, 20, 100, 10, 'gilet jaune de combat', 50, 5, 15, 60, 'img/gilet_jaune.jpg', 1),
+(219, 'Le roi des juifs', 70, 120, 10, 10, 'militant antifa', 70, 10, 5, 90, 'img/militant.jpg', 1),
+(220, 'Le roi des juifs', 70, 120, 10, 10, 'militant antifa', 70, 10, 5, 90, 'img/militant.jpg', 1),
+(221, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(222, 'Le roi des juifs', 70, 120, 10, 10, 'militant antifa', 70, 10, 5, 90, 'img/militant.jpg', 1),
+(223, 'Le roi des juifs', 70, 120, 10, 10, 'militant antifa', 70, 10, 5, 90, 'img/militant.jpg', 1),
+(224, 'Le roi des juifs', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(225, 'Le roi des juifs', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(226, 'Le roi des juifs', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(227, 'Le roi des juifs', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(228, 'Le roi des juifs', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(229, 'Le roi des juifs', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(230, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(231, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(232, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(233, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(234, 'Le roi des juifs', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(235, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(236, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(237, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(238, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(239, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(240, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(241, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(242, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(243, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1);
 
 --
 -- Index pour les tables déchargées
@@ -222,13 +199,13 @@ ALTER TABLE `equipement`
 -- AUTO_INCREMENT pour la table `monstre`
 --
 ALTER TABLE `monstre`
-  MODIFY `id_monstre` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_monstre` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `personnage`
 --
 ALTER TABLE `personnage`
-  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
+  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
