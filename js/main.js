@@ -6,6 +6,7 @@ $("#btn_valider").unbind("click").click(function(e){
     e.preventDefault();
     const classe = $("input[name=classe]:checked", "#form_init").val();
     const nom = $('input[name=nom]', '#form_init').val();
+    $(".choix").css({display:"initial"});
  
     $.ajax({
         url:"php/personnage.php?fonction=creerPerso",
@@ -17,6 +18,8 @@ $("#btn_valider").unbind("click").click(function(e){
             var joueur = chargerJoueur(index_joueur);
         }
     });
+
+    
 })
 
 // class joueur{
@@ -203,6 +206,8 @@ function boutique(joueur, boutique){
     })
 
 }
+
+
 
 function actualise_joueur(joueur){
     
