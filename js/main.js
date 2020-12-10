@@ -161,7 +161,6 @@ function monstreAttaque(monstre, joueur){
 
 function interface_combat(monstre){
     $(".img1").css({display:"flex"});
-    // console.log(monstre["img"]);
     $("#img_monstre").attr("src", monstre["image"]);
     $(".boutique").css({display:"none"});
     $(".combat").css({display:"initial"});
