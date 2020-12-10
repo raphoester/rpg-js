@@ -162,6 +162,8 @@ function monstreAttaque(monstre, joueur){
     return joueur;
 }
 
+
+
 function interface_combat(monstre){
     $(".img1").css({display:"flex"});
     // console.log(monstre["img"]);
@@ -210,5 +212,12 @@ function boutique(joueur, boutique){
 
 
 function actualise_joueur(joueur){
+    document.getElementById("id_Pv").innerHTML = (joueur["pV"]);
+    document.getElementById("id_Pm").innerHTML = (joueur["pM"]);
+    document.getElementById("id_Or").innerHTML = (joueur["pO"]);
+
     
+      
 }
+
+
