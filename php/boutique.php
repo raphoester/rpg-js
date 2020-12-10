@@ -32,14 +32,15 @@ function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets
     return $boutique;
 }
 
-function acheter($id_equip, $id_perso){
-    $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+function acheter($id_equip, $id_perso, $pdo){
     //selection de la bonne pièce d'équipement dans la table 
-    $donnees_equip=$pdo->query("SELECT * from equipement where id_equipement = "+"$id_equip")->fetch();
+    $donnees_equip=$pdo->query("SELECT * from equipement where id_equipement = $id_equip;")->fetch();
     // le prix de l'équipement est décompté du solde du joueur (aucune vérification - chiffres négatifs autorisés)
-    $pdo->exec("UPDATE personnage set pO = pO - "+$donnees_equip['prix']+"where id_personnage = $id_perso");
+    $pdo->exec("UPDATE personnage set pO = pO - ".$donnees_equip['prix']." where id_personnage = $id_perso;");
     //création d'une entrée dans la table relationnelle possède
-    $pdo->exec("INSERT into possede(id_personnage, id_equipement) values($id_equip, $id_perso)");
+    echo "INSERT into possede(id_personnage, id_equipement) values($id_equip, $id_perso)";
+
+    
 }
 
 
@@ -49,7 +50,7 @@ switch($_GET['fonction']){
         echo json_encode(nouvelleBoutique($tableauEquipement));
     break;
     case "acheter"://acheter une pièce d'équipement
-        acheter($_GET["id_equip"], $_GET["id_perso"]);
+        acheter($_GET["id_equip"], $_GET["id_perso"], $pdo);
     break;
     default:{//erreur dans les paramètres GET
         echo json_encode("Errreur d'argument !");

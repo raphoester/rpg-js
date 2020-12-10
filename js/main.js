@@ -94,13 +94,12 @@ function combat(monstre, joueur){
 
         if(monstre["pV"]<=0)
         {
-            console.log(monstre["nom"] +" est mort !");
+            document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo">' + monstre["nom"] +"est mort.</p>";
             $("#id_attaquer").unbind("click");
-            nouvelleBoutique(joueur)
+            nouvelleBoutique(joueur);
         }
         else{
             joueur = monstreAttaque(monstre, joueur);
-        
         }
 
         if(joueur["pV"]<=0){
@@ -185,6 +184,19 @@ function nouvelleBoutique(joueur){
         url:"php/boutique.php?fonction=nvBoutique",
         dataType: "json",
         success:function(reponse){
+            reponse.forEach(element => {
+                element["id_equipement"]=parseInt(element["id_equipement"]);
+                element["pV"]=parseInt(element["pV"]);
+                element["pM"]=parseInt(element["pM"]);
+                element["pA"]=parseInt(element["pA"]);
+                element["esquive"]=parseInt(element["esquive"]);
+                element["defMagique"]=parseInt(element["defMagique"]);
+                element["defPhysique"]=parseInt(element["defPhysique"]);
+                element["vitesse"]=parseInt(element["vitesse"]);
+                element["rarete"]=parseInt(element["rarete"]);
+                element["prix"]=parseInt(element["prix"]);
+
+            });
             boutique(joueur, reponse);
         }
         // error:function(reponse)
@@ -200,6 +212,11 @@ function boutique(joueur, boutique){
     $(".boutique").css({display:"initial"});
     $(".inventaire").css({display:"initial"});
     $("#btn_combat").css({color:"red"});
+
+    //affichage des objets :
+    afficher_btk(boutique, joueur);
+
+
     $("#btn_combat").unbind("click").click(function(){
         nouveauMonstre(joueur);
     })
@@ -210,4 +227,50 @@ function boutique(joueur, boutique){
 
 function actualise_joueur(joueur){
     
+}
+
+function afficher_btk(boutique, perso){
+    $("#contenu_boutique").val("");
+    var i = 1;
+    boutique.forEach(element => {
+        charger_objet(element, i)     
+        i+=1;
+    });
+    
+    console.log("creation des cliqueurs");
+    $("#acheter_1").click(function(){
+        console.log('click1');
+        acheter(boutique[0], perso);
+    })   
+
+    $("#acheter_2").click(function(){
+        console.log('click2');
+        acheter(boutique[1], perso);
+    })
+
+    $("#acheter_3").click(function(){
+        console.log('click3');
+        acheter(boutique[2], perso);
+    })
+}
+
+
+function acheter(objet, perso){
+    if(objet["prix"] <= perso["pO"]){
+        $.ajax({
+            url:"php/boutique.php?fonction=acheter",
+            data:{ id_equip: objet["id_equipement"], id_perso: perso["id_personnage"]},
+            success:function(rafraichir_inventaire){
+                
+            }
+        })
+    }
+    else{
+        alert("Vous n'avez pas assez d'or !");
+    }
+}
+
+function charger_objet(equipement, i){
+    console.log(i);
+    document.getElementById("contenu_boutique").innerHTML += ('<TD><div class="equipement"><p>' + equipement["nom"] + '</p><p><i class="fas fa-heart"></i>:<strong>' + equipement["pV"] +'</strong></p><p><i class="fas fa-hat-wizard"></i> :<strong>' + equipement["pM"] +'</strong></p><p><i class="ri-sword-line"></i> :<strong>' + equipement["pA"] +'</strong></p><p><i class="fas fa-wind"></i> : <strong>' + equipement["esquive"] +'</strong></p><p><i class="ri-magic-line"></i> :<strong>' + equipement["defMagique"] +'</strong></p><p><i class="ri-shield-line"></i> :<strong>' + equipement["defPhysique"] +'</strong></p><p><i class="ri-speed-line"></i> :<strong>' + equipement["vitesse"] +'</strong></p><p><i class="fas fa-coins"></i> :<strong>' + equipement["prix"] +'</strong></p></div><button id="acheter_'+i+'">Acheter</button></TD>');
 }
