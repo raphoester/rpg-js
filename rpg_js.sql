@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 09 déc. 2020 à 18:42
+-- Généré le : ven. 11 déc. 2020 à 23:47
 -- Version du serveur :  10.4.16-MariaDB
 -- Version de PHP : 7.4.12
 
@@ -37,18 +37,22 @@ CREATE TABLE `equipement` (
   `defMagique` int(11) DEFAULT NULL,
   `defPhysique` int(11) DEFAULT NULL,
   `vitesse` int(11) DEFAULT NULL,
-  `type` enum('arme','armure','chaussures','chapeau','pantalon') DEFAULT NULL,
   `rarete` int(11) DEFAULT NULL,
   `prix` int(11) DEFAULT NULL,
-  `type_equipement` enum('arme','chapeau','veste','chaussures') NOT NULL
+  `type_equipement` enum('arme','futal','chapeau','veste','chaussures') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `equipement`
 --
 
-INSERT INTO `equipement` (`id_equipement`, `nom`, `pV`, `pM`, `pA`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `type`, `rarete`, `prix`, `type_equipement`) VALUES
-(1, 'Potion_test', 10, 10, 10, 10, 10, 10, 10, '', 1, 10, 'arme');
+INSERT INTO `equipement` (`id_equipement`, `nom`, `pV`, `pM`, `pA`, `esquive`, `defMagique`, `defPhysique`, `vitesse`, `rarete`, `prix`, `type_equipement`) VALUES
+(1, 'Potion_test', 10, 10, 10, 10, 10, 10, 10, 1, 10, 'arme'),
+(2, 'epee basique', 0, 20, 15, 2, 0, 0, 15, 3, 7, 'arme'),
+(3, 'armure en fer', 100, 10, 10, 0, 20, 50, 10, 4, 9, 'veste'),
+(4, 'pantalon en cuir', 20, 10, 0, 0, 10, 30, 20, 1, 3, 'futal'),
+(5, 'kippa', 10, 10, 10, 10, 10, 10, 10, 10, 7, 'chapeau'),
+(6, 'crocs', 5, 5, 5, 5, 5, 5, 5, 5, 3, 'chaussures');
 
 -- --------------------------------------------------------
 
@@ -161,7 +165,119 @@ INSERT INTO `personnage` (`id_personnage`, `nom`, `pV`, `pM`, `pA`, `pO`, `class
 (240, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
 (241, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
 (242, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
-(243, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1);
+(243, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(244, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(245, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(246, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(247, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(248, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(249, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(250, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(251, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(252, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(253, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(254, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(255, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(256, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(257, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(258, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(259, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(260, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(261, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(262, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(263, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(264, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(265, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(266, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(267, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(268, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(269, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(270, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(271, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(272, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(273, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(274, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(275, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(276, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(277, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(278, 'Jean Charles', 500, 10, 30, -40, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(279, 'Jean Charles', 500, 10, 30, 0, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(280, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(281, 'Jean Charles', 200, 60, 60, -30, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(282, 'Jean Charles', 500, 10, 30, 0, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(283, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(284, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(285, 'Jean Charles', 500, 10, 30, -20, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(286, 'Jean Charles', 500, 10, 30, -170, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(287, 'Jean Charles', 500, 10, 30, 0, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(288, 'Jean Charles', 500, 10, 30, -30, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(289, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(290, 'Jean Charles', 500, 10, 30, -30, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(291, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(292, 'Jean Charles', 500, 10, 30, -50, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(293, 'Jean Charles', 500, 10, 30, -70, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(294, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(295, 'Jean Charles', 200, 60, 60, -50, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(296, 'Jean Charles', 200, 60, 60, -30, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(297, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(298, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(299, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(300, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(301, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(302, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(303, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(304, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(305, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(306, 'Jean Charles', 200, 60, 60, -10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(307, 'Jean Charles', 200, 60, 60, -40, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(308, 'Jean Charles', 200, 60, 60, -60, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(309, 'Jean Charles', 200, 60, 60, -40, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(310, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(311, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(312, 'Jean Charles', 200, 60, 60, -70, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(313, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(314, 'Jean Charles', 200, 60, 60, -70, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(315, 'Jean Charles', 200, 60, 60, -50, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(316, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(317, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(318, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(319, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(320, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(321, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(322, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(323, 'Jean Charles', 500, 10, 30, -230, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(324, 'Jean Charles', 500, 10, 30, -40, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(325, 'Jean Charles', 500, 10, 30, 0, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(326, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(327, 'Jean Charles', 200, 60, 60, -10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(328, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(329, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(330, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(331, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(332, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(333, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(334, 'Jean Charles', 200, 60, 60, -10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(335, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(336, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(337, 'Jean Charles', 200, 60, 60, -180, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(338, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(339, 'Jean Charles', 200, 60, 60, -10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(340, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(341, 'Jean Charles', 200, 60, 60, -20, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(342, 'Jean Charles', 200, 60, 60, -10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(343, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(344, 'Jean Charles', 200, 60, 60, -10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(345, 'Jean Charles', 200, 60, 60, 0, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(346, 'Jean Charles', 200, 60, 60, -80, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(347, 'Jean Charles', 500, 10, 30, 0, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(348, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(349, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(350, 'Jean Charles', 500, 10, 30, 10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(351, 'Jean Charles', 500, 10, 30, -10, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(352, 'Jean Charles', 500, 10, 30, -13, 'crs', 20, 30, 40, 10, 'img/crs.jpg', 1),
+(353, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(354, 'Jean Charles', 200, 60, 60, 3, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1),
+(355, 'Jean Charles', 200, 60, 60, 10, 'chef kebabier', 20, 20, 20, 45, 'img/kebabier.jpg', 1);
 
 --
 -- Index pour les tables déchargées
@@ -193,7 +309,7 @@ ALTER TABLE `personnage`
 -- AUTO_INCREMENT pour la table `equipement`
 --
 ALTER TABLE `equipement`
-  MODIFY `id_equipement` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_equipement` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `monstre`
@@ -205,7 +321,7 @@ ALTER TABLE `monstre`
 -- AUTO_INCREMENT pour la table `personnage`
 --
 ALTER TABLE `personnage`
-  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=244;
+  MODIFY `id_personnage` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=356;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
