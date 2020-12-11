@@ -133,8 +133,10 @@ function combat(monstre, joueur){
         {
             document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo" style:"font-size: 50px;">' + monstre["nom"] +" est mort !</p>";
             document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo" > Vous gagnez 5 pièces d\'or et un niveau!</p>';
-            ajouterPieces(5, joueur);
-            ajouterNiveau(joueur);
+            joueur = ajouterPieces(5, joueur);
+            joueur = ajouterNiveau(joueur);
+            // chargerJoueur(joueur);
+            // joueur= lirePoubelle();
             
             $("#id_attaquer").unbind("click").click(function()
                 {
@@ -250,8 +252,7 @@ function nouvelleBoutique(joueur){
 }
 
 function boutique(joueur, boutique){
-    // chargerJoueur(joueur);
-    // joueur= lirePoubelle();
+
     $("#btn_combat").css({display:"initial"});
     $(".combat").css({display:'none'});
     $(".histo1").css({display:"none"});
@@ -357,10 +358,18 @@ function rafraichir_inventaire(perso)
 }
 
 
-function ajouterPieces(){
-
+function ajouterPieces(qtePieces, joueur){
+    joueur["po"] += qtePieces;
+    $.ajax({
+        url:"php/stats_equipement.php?fonction=gagnerdelargent",
+        data:{qtePieces, id_utilisateur:joueur["id"]},
+        success:function(){
+            joueur["po"] += qtePieces;
+        }
+    })
+    return joueur;
 }
 
-function ajouterNiveau(){
+function ajouterNiveau(joueur){
 
 }
