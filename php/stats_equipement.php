@@ -7,22 +7,38 @@ include("../donnees/data.php");
 
 
 
-function inventaire($id_perso){
-    $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-    $sth = $pdo->query("SELECT * FROM equipement e right join possede p on e.id_equipement = p.id_equipement where e.id_personnage = 1 ");
-    $result = $sth->fetchAll(PDO::FETCH_OBJ);
+function inventaire($pdo, $type_equipement, $id_perso ){
+    $sth = $pdo->query("SELECT * FROM equipement e inner join possede p on e.id_equipement = p.id_equipement where p.id_personnage =". $id_perso ." and type_equipement ='".$type_equipement."';");
+    $result = $sth->fetch();
     echo json_encode($result);
+    // var_dump($result);
 }
 
-function afficher_equipement($id_perso, $id_equip){
-    $pdo = new PDO("mysql:host=localhost; dbname=rpg_js", "root", "" , array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+function afficher_equipement($id_perso, $pdo, $id_equip){
     $sth1 = $pdo->query("SELECT * FROM equipement WHERE id_equipement= 1 ");
     $result1 = $sth1->fetchAll(PDO::FETCH_OBJ); 
     echo json_encode($result1);
-
 }
 
 
 
 
+
+switch($_GET["fonction"]){
+    case "equipement_veste":
+        inventaire($pdo, "veste", $_GET["id_utilisateur"]);
+        break;
+    case "equipement_chapeau":
+        inventaire($pdo, "chapeau", $_GET["id_utilisateur"]);
+        break;
+    case "equipement_arme":
+        inventaire($pdo, "arme", $_GET["id_utilisateur"]);
+        break;
+    case "equipement_futal":
+        inventaire($pdo, "futal", $_GET["id_utilisateur"]);
+        break;
+    case "equipement_chaussures":
+        inventaire($pdo, "chaussures", $_GET["id_utilisateur"]);
+        break;
+}
 ?>

@@ -35,12 +35,16 @@ function nouvelleBoutique ($tabEquip){//créer une nouvelle boutique de 6 objets
 function acheter($id_equip, $id_perso, $pdo){
     //selection de la bonne pièce d'équipement dans la table 
     $donnees_equip=$pdo->query("SELECT * from equipement where id_equipement = $id_equip;")->fetch();
+
+
+    //suppression de l'ancienne possession
+    $type_equip = $donnees_equip["type_equipement"];
+    $pdo->exec("delete p from possede p inner join equipement e on e.id_equipement = p.id_equipement where p.id_personnage=$id_perso and e.type_equipement='$type_equip';");
+    
     // le prix de l'équipement est décompté du solde du joueur (aucune vérification - chiffres négatifs autorisés)
     $pdo->exec("UPDATE personnage set pO = pO - ".$donnees_equip['prix']." where id_personnage = $id_perso;");
     //création d'une entrée dans la table relationnelle possède
-    echo "INSERT into possede(id_personnage, id_equipement) values($id_equip, $id_perso)";
-
-    
+    $pdo->exec("INSERT into possede(id_personnage, id_equipement) values($id_perso, $id_equip)");
 }
 
 
