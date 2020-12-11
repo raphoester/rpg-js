@@ -2,7 +2,9 @@ EXPLICATION DU CODE :
 
 n'ayant pas trouvé comment utiliser un return propre sur un appel AJAX, j'ai été dans l'incapacité de coder quelque chose de propre. En effet, après chaque appel, le seul moyen de récupérer les données est d'appeler une autre fonction à la suite, ce qui limite très largement la modularité de la programmation. Les fonctions ne peuvent pas être séparées les unes des autres et doivent forcément s'enchaîner. 
 
-Pour pallier ce problème, j'ai essayer de faire persister les données récupérées en AJAX dans le texte HTML, dans une section appelée "poubelle de variable". L'idée était de les conserver dans un champ en display:none pour pouvoir y accéder à tout moment. Je n'ai pas réussi à pousser cette technique assez loin pour que ce soit complètement fonctionnel. De ce fait, le jeu n'est pas complètement terminé. Les fonctionnalités ne sont pas toutes présentes, mais l'idée générale est là. 
+Pour pallier ce problème, j'ai essayer de faire persister les données récupérées en AJAX dans le texte HTML, dans une section appelée "poubelle de variable". L'idée était de les conserver dans un champ en display:none pour pouvoir y accéder à tout moment. Je n'ai pas réussi à pousser cette technique assez loin pour que ce soit complètement fonctionnel. Le problème que j'ai rencontré est que la lecture de la poubelle bloquait l'exécution du code par exemple.
+ 
+De ce fait, le jeu n'est pas complètement terminé. Les fonctionnalités ne sont pas toutes présentes, mais l'idée générale est là. 
 
 Avec plus de temps (et d'aide, se référer à la répartition des commits), j'aurais intégré un système pour accéder depuis l'écran d'accueil à des parties précédemment sauvegardées. J'aurais aussi équilibré le jeu de façon à offrir plus de choix au joueur et mieux doser la force des monstres. 
 

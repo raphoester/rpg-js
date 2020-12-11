@@ -133,8 +133,8 @@ function combat(monstre, joueur){
         {
             document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo" style:"font-size: 50px;">' + monstre["nom"] +" est mort !</p>";
             document.getElementById('contenu_histo').innerHTML += '<p class = "element_histo" > Vous gagnez 5 pièces d\'or et un niveau!</p>';
-            joueur = ajouterPieces(5, joueur);
-            joueur = ajouterNiveau(joueur);
+            // joueur = ajouterPieces(5, joueur);
+            // joueur = ajouterNiveau(joueur);
             // chargerJoueur(joueur);
             // joueur= lirePoubelle();
             
@@ -315,7 +315,7 @@ function acheter(objet, perso){
             }
         })
         console.log("la poubelle est lue");
-        joueur=lirePoubelle();
+        // joueur=lirePoubelle();
         actualise_joueur(joueur);
     }
     else{
